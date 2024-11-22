@@ -1,0 +1,78 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/cpp
+{
+  "name": "SQL",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  // Features to add to the dev container. More info: https://containers.dev/features.openmp
+  // "features": {},
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "gcc -v",
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // sql:
+        "inferrinizzard.prettier-sql-vscode",
+        "qwtel.sqlite-viewer",
+        "alexcvzz.vscode-sqlite",
+        "hediet.vscode-drawio",
+        // python:
+        "ms-python.python",
+        "ms-python.autopep8",
+        // utils:
+        "streetsidesoftware.code-spell-checker",
+        "streetsidesoftware.code-spell-checker-russian",
+        "eamodio.gitlens",
+        "batatop.terminal-auto-rename",
+        "formulahendry.auto-rename-tag",
+        "michaelcurrin.auto-commit-msg",
+        "nilssoderman.batch-runner",
+        "aaron-bond.better-comments",
+        "adpyke.codesnap",
+        "octopus-writer.desmos-calculator-window",
+        "ShahilKumar.docxreader",
+        "samubarb.vscode-doxyfile",
+        "GrapeCity.gc-excelviewer",
+        "Tyriar.luna-paint",
+        "bierner.markdown-preview-github-styles",
+        "PKief.material-icon-theme",
+        "Wscats.cors-browser",
+        "mechatroner.rainbow-csv",
+        "tomoki1207.pdf",
+        "ms-azuretools.vscode-docker",
+        "ecmel.vscode-html-css",
+        "mohd-akram.vscode-html-format",
+        "jock.svg",
+        "fabiospampinato.vscode-open-in-application",
+        "fabiospampinato.vscode-open-in-github"
+      ],
+      "settings": {
+        // ---------------------------------------------------------------------------------------
+        // --------------------------------          SQL          --------------------------------
+        // ---------------------------------------------------------------------------------------
+        "[sql]": {
+          "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
+        },
+        // ---------------------------------------------------------------------------------------
+        // --------------------------------        Drawio         --------------------------------
+        // ---------------------------------------------------------------------------------------
+        "hediet.vscode-drawio.resizeImages": null,
+        // ---------------------------------------------------------------------------------------
+        // --------------------------------        Python         --------------------------------
+        // ---------------------------------------------------------------------------------------
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.autopep8"
+        },
+        "files.associations": {
+          "*.py": "python"
+        }
+      }
+    }
+  }
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+}

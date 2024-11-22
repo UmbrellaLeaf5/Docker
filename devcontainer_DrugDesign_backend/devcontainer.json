@@ -1,0 +1,112 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/cpp
+{
+  "name": "DrugDesign_backend",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  // Features to add to the dev container. More info: https://containers.dev/features.openmp
+  // "features": {},
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [
+    3000
+  ],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "cd /bin/ && sudo wget \"https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh\" && sudo bash Miniforge3-$(uname)-$(uname -m).sh && sudo rm Miniforge3-$(uname)-$(uname -m).sh",
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // с/с++:
+        "ms-vscode.cpptools",
+        "danielpinto8zz6.c-cpp-compile-run",
+        "xaver.clang-format",
+        "josetr.cmake-language-support-vscode",
+        "ms-vscode.cmake-tools",
+        "vadimcn.vscode-lldb",
+        "basdp.language-gas-x86",
+        "ms-vscode.makefile-tools",
+        "surajbarkale.ninja",
+        "cschlosser.doxdocgen",
+        // utils:
+        "streetsidesoftware.code-spell-checker",
+        "streetsidesoftware.code-spell-checker-russian",
+        "eamodio.gitlens",
+        "batatop.terminal-auto-rename",
+        "formulahendry.auto-rename-tag",
+        "michaelcurrin.auto-commit-msg",
+        "nilssoderman.batch-runner",
+        "aaron-bond.better-comments",
+        "adpyke.codesnap",
+        "octopus-writer.desmos-calculator-window",
+        "ShahilKumar.docxreader",
+        "samubarb.vscode-doxyfile",
+        "GrapeCity.gc-excelviewer",
+        "Tyriar.luna-paint",
+        "bierner.markdown-preview-github-styles",
+        "PKief.material-icon-theme",
+        "Wscats.cors-browser",
+        "mechatroner.rainbow-csv",
+        "tomoki1207.pdf",
+        "ms-azuretools.vscode-docker",
+        "ecmel.vscode-html-css",
+        "mohd-akram.vscode-html-format",
+        "jock.svg",
+        "fabiospampinato.vscode-open-in-application",
+        "fabiospampinato.vscode-open-in-github"
+      ],
+      "settings": {
+        // ---------------------------------------------------------------------------------------
+        // --------------------------------       C++ && C        --------------------------------
+        // ---------------------------------------------------------------------------------------
+        "C_Cpp.default.cppStandard": "c++23",
+        "C_Cpp.formatting": "clangFormat",
+        "C_Cpp.default.compilerPath": "gcc",
+        "C_Cpp.clang_format_path": "clang-format",
+        "C_Cpp.clang_format_style": "Google",
+        "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+        "C_Cpp.intelliSenseUpdateDelay": 500,
+        // 
+        "clang-format.executable": "clang-format",
+        "clang-format.style": "Google",
+        "clang-format.fallbackStyle": "Google",
+        "[cpp]": {
+          "editor.defaultFormatter": "xaver.clang-format"
+        },
+        "[c]": {
+          "editor.defaultFormatter": "xaver.clang-format"
+        },
+        // ---------------------------------------------------------------------------------------
+        // --------------------------------         CMake         --------------------------------
+        // ---------------------------------------------------------------------------------------
+        "cmake.options.statusBarVisibility": "compact",
+        "cmake.showOptionsMovedNotification": false,
+        "cmake.configureOnOpen": true,
+        "cmake.installPrefix": "${workspaceFolder}",
+        // "cmake.pinnedCommands": [
+        //   "workbench.action.tasks.configureTaskRunner",
+        //   "workbench.action.tasks.runTask"
+        // ],
+        "cmake.showConfigureWithDebuggerNotification": false,
+        // ---------------------------------------------------------------------------------------
+        // --------------------------------        Doxygen        --------------------------------
+        // ---------------------------------------------------------------------------------------
+        "doxdocgen.c.triggerSequence": "//*",
+        "doxdocgen.generic.dateFormat": "DD-MM-YYYY",
+        "doxdocgen.cpp.ctorText": "Инициализирует новый экземпляр {name}",
+        "doxdocgen.cpp.dtorText": "Уничтожает экземпляр {name}",
+        "doxdocgen.c.setterText": "Устанавливает значение {name}",
+        "doxdocgen.c.getterText": "Возвращает значение {name}",
+        "doxdocgen.c.factoryMethodText": "Создает {name}",
+        "doxdocgen.generic.commandSuggestionAddPrefix": true,
+        "doxdocgen.generic.useGitUserEmail": true,
+        "doxdocgen.generic.useGitUserName": true
+      }
+    }
+  },
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:/bin/miniforge3/bin"
+  }
+}
