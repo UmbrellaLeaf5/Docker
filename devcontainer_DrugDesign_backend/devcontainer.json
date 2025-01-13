@@ -8,9 +8,7 @@
   // Features to add to the dev container. More info: https://containers.dev/features.openmp
   // "features": {},
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [
-    3000
-  ],
+  // "forwardPorts": [],
   // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": "cd /bin/ && sudo wget \"https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh\" && sudo bash Miniforge3-$(uname)-$(uname -m).sh && sudo rm Miniforge3-$(uname)-$(uname -m).sh",
   // Configure tool-specific properties.
@@ -59,17 +57,18 @@
         // ---------------------------------------------------------------------------------------
         // --------------------------------       C++ && C        --------------------------------
         // ---------------------------------------------------------------------------------------
-        "C_Cpp.default.cppStandard": "c++23",
+        "C_Cpp.default.cppStandard": "c++20",
         "C_Cpp.formatting": "clangFormat",
         "C_Cpp.default.compilerPath": "gcc",
         "C_Cpp.clang_format_path": "clang-format",
-        "C_Cpp.clang_format_style": "Google",
+        "C_Cpp.clang_format_style": "file",
         "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
         "C_Cpp.intelliSenseUpdateDelay": 500,
-        // 
+        "C_Cpp.intelliSenseCacheSize": 0,
+        "C_Cpp.intelliSenseEngine": "Tag Parser",
+        //
         "clang-format.executable": "clang-format",
-        "clang-format.style": "Google",
-        "clang-format.fallbackStyle": "Google",
+        "clang-format.style": "file",
         "[cpp]": {
           "editor.defaultFormatter": "xaver.clang-format"
         },
@@ -83,10 +82,6 @@
         "cmake.showOptionsMovedNotification": false,
         "cmake.configureOnOpen": true,
         "cmake.installPrefix": "${workspaceFolder}",
-        // "cmake.pinnedCommands": [
-        //   "workbench.action.tasks.configureTaskRunner",
-        //   "workbench.action.tasks.runTask"
-        // ],
         "cmake.showConfigureWithDebuggerNotification": false,
         // ---------------------------------------------------------------------------------------
         // --------------------------------        Doxygen        --------------------------------

@@ -8,5 +8,4 @@ ENV DEBIAN_FRONTEND=noninteractive
 # [Optional] Uncomment this section to install additional packages.
 RUN apt-get update &&\
   apt-get -y install --no-install-recommends clang gcc clang-format cmake make git\
-  libboost-all-dev 
-
+  libboost-all-dev libeigen3-dev libomp-dev
